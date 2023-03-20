@@ -1,11 +1,19 @@
 import React from "react";
+import Task from "./Task";
 
-function TaskList() {
+function tasks({ tasks, handleDelete }) {
+
+  const task = tasks.map((task) => {
+    return <Task key={Math.random()} {...task} handleDelete={handleDelete} />
+  })
+
+
+
   return (
     <div className="tasks">
-      {/* display a list of tasks using Task component */}
+      {task}
     </div>
   );
 }
 
-export default TaskList;
+export default tasks;
